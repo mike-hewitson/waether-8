@@ -1,18 +1,16 @@
 (ns weather-8.test.services.home
-  (:require [midje.sweet :refer :all]
-            ; [ring.mock.request :refer :all]
-            [weather-8.services.home :as r]
+  (:require [clojure.test :as t :refer [is deftest testing]]
+            [weather-8.services.home :as sut]
             [weather-8.test.fixtures :as fix]))
 
-(facts "about 'get-direction'"
-       (fact "given some bearings, its should return their direction"
-             (r/translate-direction 0) => "Northerly"
-             (r/translate-direction 45) => "North-easterly"
-             (r/translate-direction 44.9) => "North-easterly"
-             (r/translate-direction 50) => "North-easterly"
-             (r/translate-direction 359) => "Northerly"))
+(deftest translate-direction-should-return-correct-direction
+  (is (= (sut/translate-direction 0) "Northerly"))
+  (is (= (sut/translate-direction 45) "North-easterly"))
+  (is (= (sut/translate-direction 44.9) "North-easterly"))
+  (is (= (sut/translate-direction 50) "North-easterly"))
+  (is (= (sut/translate-direction 359) "Northerly")))
 
-(facts "about 'format-readings-for-merge'"
+#_(facts "about 'format-readings-for-merge'"
        (let [readings (r/format-readings-for-merge fix/latest-reading)]
          (fact "it should return a map"
                (map? readings) => true)
@@ -21,7 +19,7 @@
          (fact "elements should contain 10 items"
                (count (val (first readings))) => 10)))
 
-(facts "about 'create-directions-for-merge'"
+#_(facts "about 'create-directions-for-merge'"
        (let [directions (r/create-directions-for-merge fix/latest-reading)]
          (fact "it should return a map"
                (map? directions) => true)

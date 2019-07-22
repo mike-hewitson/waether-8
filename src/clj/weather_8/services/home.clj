@@ -1,6 +1,6 @@
-(ns weather-7.services.home
+(ns weather-8.services.home
   (:require [clojure.math.numeric-tower :as math]
-            [weather-7.db.core          :as db]
+            [weather-8.db.core          :as db]
             [clj-time.core              :as time]
             [clj-time.coerce            :as coerce]))
 
