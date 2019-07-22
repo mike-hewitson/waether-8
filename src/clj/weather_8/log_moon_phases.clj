@@ -1,4 +1,4 @@
-(ns weather-7.log-moon-phases
+(ns weather-8.log-moon-phases
   (:require [clj-http.client       :as client]
             [clojure.tools.logging :as log]
             [cprop.core            :as cprop :refer [load-config]]

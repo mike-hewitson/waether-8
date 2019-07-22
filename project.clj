@@ -5,8 +5,10 @@
 
   :dependencies [[ch.qos.logback/logback-classic "1.2.3"]
                  [cheshire "5.8.1"]
+                 [clj-http "3.9.0"]
                  [cljs-ajax "0.8.0"]
                  [clojure.java-time "0.3.2"]
+                 [org.clojure/math.numeric-tower "0.0.4"]
                  [com.cognitect/transit-clj "0.8.313"]
                  [com.google.guava/guava "27.0.1-jre"]
                  [com.google.javascript/closure-compiler-unshaded "v20190618" :scope "provided"]
@@ -41,7 +43,7 @@
                  [thheller/shadow-cljs "2.8.39" :scope "provided"]]
 
   :min-lein-version "2.0.0"
-  
+
   :source-paths ["src/clj" "src/cljs" "src/cljc"]
   :test-paths ["test/clj"]
   :resource-paths ["resources" "target/cljsbuild"]
@@ -65,7 +67,7 @@
     {:target :node-test
      :output-to "target/test/test.js"
      :autorun true}}}
-  
+
   :npm-deps [[shadow-cljs "2.8.39"]
              [create-react-class "15.6.3"]
              [react "16.8.6"]
@@ -74,7 +76,7 @@
   :profiles
   {:uberjar {:omit-source true
              :prep-tasks ["compile" ["shadow" "release" "app"]]
-             
+
              :aot :all
              :uberjar-name "weather-8.jar"
              :source-paths ["env/prod/clj" "env/prod/cljs"]
@@ -93,8 +95,8 @@
                                  [ring/ring-devel "1.7.1"]
                                  [ring/ring-mock "0.4.0"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.24.1"]]
-                  
-                  
+
+
                   :source-paths ["env/dev/clj" "env/dev/cljs" "test/cljs"]
                   :resource-paths ["env/dev/resources"]
                   :repl-options {:init-ns user}
@@ -102,8 +104,8 @@
                                (pjstadig.humane-test-output/activate!)]}
    :project/test {:jvm-opts ["-Dconf=test-config.edn"]
                   :resource-paths ["env/test/resources"]
-                  
-                  
+
+
                   }
    :profiles/dev {}
    :profiles/test {}})

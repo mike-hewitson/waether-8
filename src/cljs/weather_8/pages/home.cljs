@@ -1,4 +1,4 @@
-(ns weather-7.pages.home
+(ns weather-8.pages.home
   (:require [reagent.core     :as r]
             [re-frame.core    :as rf]
             [goog.string      :as gstring]

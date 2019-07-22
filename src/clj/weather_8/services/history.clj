@@ -1,5 +1,5 @@
-(ns weather-7.services.history
-  (:require [weather-7.db.core :as db]
+(ns weather-8.services.history
+  (:require [weather-8.db.core :as db]
             [clj-time.core     :as time]
             [clj-time.coerce   :as coerce]
             [clj-time.periodic :as periodic]))

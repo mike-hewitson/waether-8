@@ -1,5 +1,5 @@
-(ns weather-7.services.summary
-  (:require [weather-7.db.core :as db]))
+(ns weather-8.services.summary
+  (:require [weather-8.db.core :as db]))
 
                                         ; TODO get locations from database
 

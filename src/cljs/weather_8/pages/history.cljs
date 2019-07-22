@@ -1,4 +1,4 @@
-(ns weather-7.pages.history
+(ns weather-8.pages.history
   (:require [re-frame.core    :as rf]
             [reagent.core     :as r]
             [cljs-time.core   :as time]

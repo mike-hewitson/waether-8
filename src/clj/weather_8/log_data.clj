@@ -1,4 +1,4 @@
-(ns weather-7.log-data
+(ns weather-8.log-data
   (:require [clj-http.client            :as client]
             [clojure.tools.logging      :as log]
             [cprop.core                 :as cprop :refer [load-config]]

@@ -17,7 +17,7 @@ $ mongod --config /usr/local/etc/mongod.conf
 or
 $ mongod
 $ lein run
-$ lein figwheel
+$ lein shadow watch app
 $ lein midje :autotest
 ```
 
